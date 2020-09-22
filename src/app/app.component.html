@@ -1,8 +1,18 @@
-<div  class="container" >
-  <div *ngFor="let item of countryList">
-    <h3>Country Name :{{item.name}}, Code: {{item.birthday}}</h3>
+<ng-container  *ngFor="let group of birthDayList">
+  <div class="wrapper">
+    <div class="header">
+      {{getDayName(group)}}
+    </div>
+    <div class="container-wrapper">
+    <div class="container">
+      <div class="item" *ngFor="let birthday of group[1]">
+        <span>{{birthday.shName}}</span>
+      </div>
+    </div>
   </div>
-</div>
+  </div>
+  
+</ng-container>
 
 
 <router-outlet></router-outlet>
